@@ -1,0 +1,107 @@
+
+:host {
+  --primary-text: #2d3436;
+  --secondary-text: #636e72;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+}
+
+.main-wrapper {
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.8s ease;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 { color: var(--primary-text); margin-bottom: 5px; font-weight: 800; }
+.subtitle { color: var(--secondary-text); font-size: 0.9rem; }
+
+/* Stats Bar */
+.vibe-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+  transition: all 0.5s ease;
+}
+
+.stat-box { text-align: center; }
+.stat-number { font-size: 1.8rem; font-weight: bold; display: block; }
+.stat-label { font-size: 0.7rem; text-transform: uppercase; opacity: 0.9; }
+.stat-separator { width: 1px; height: 40px; background: rgba(255,255,255,0.3); }
+
+/* Glass Cards */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.input-group { display: flex; gap: 10px; align-items: center; }
+input { 
+  flex: 1; border: none; padding: 12px; border-radius: 10px; 
+  background: #f1f2f6; outline: none; transition: 0.3s;
+}
+input:focus { background: white; box-shadow: 0 0 0 2px #3498db; }
+
+button {
+  background: #2d3436; color: white; border: none; 
+  padding: 12px 20px; border-radius: 10px; cursor: pointer;
+  font-weight: 600; transition: 0.3s;
+}
+button:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.2); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Vibe Cards */
+.vibe-card {
+  background: white;
+  margin-bottom: 12px;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 6px solid;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  animation: slideIn 0.3s ease-out;
+}
+
+.vibe-mood { display: block; font-weight: 600; color: var(--primary-text); }
+.vibe-time { font-size: 0.75rem; color: var(--secondary-text); }
+
+.delete-icon { background: none; color: #dfe6e9; padding: 5px; font-size: 1rem; }
+.delete-icon:hover { color: #ff7675; }
+
+/* Animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse { display: inline-block; animation: pulseAni 2s infinite; }
+@keyframes pulseAni {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Search bar special style */
+.search-bar { width: 100%; margin: 15px 0; border-radius: 25px; padding-left: 20px; }
+.filter-section { display: flex; align-items: center; gap: 10px; }
+.clear-btn { background: #ff7675; font-size: 0.8rem; padding: 8px 15px; }
